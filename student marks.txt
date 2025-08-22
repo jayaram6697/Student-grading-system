@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <style>
+        body { font-family: Arial; margin: 30px; background: #f9f9f9; }
+        h2 { color: #333; }
+        .container { background: white; padding: 20px; width: 400px; border-radius: 10px; box-shadow: 0 0 10px gray; }
+        input, button { margin: 5px 0; padding: 8px; width: 100%; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Grade Calculator</h2>
+        <label>Student Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
+        
+        <label>Marks (comma separated):</label>
+        <input type="text" id="marks" placeholder="e.g. 85,90,70">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculate() {
+            let name = document.getElementById("name").value;
+            let marksInput = document.getElementById("marks").value;
+            let marks = marksInput.split(",").map(Number);
+
+            let total = marks.reduce((a, b) => a + b, 0);
+            let percentage = total / marks.length;
+            let grade = (percentage >= 90) ? 'A' : (percentage >= 75) ? 'B' : (percentage >= 50) ? 'C' : 'F';
+
+            document.getElementById("result").innerHTML = 
+                "Name: " + name + "<br>Total: " + total + 
+                "<br>Percentage: " + percentage.toFixed(2) + "%" + 
+                "<br>Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
