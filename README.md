@@ -1,2 +1,30 @@
-# Student-grading-system
-A Student Grading System is a project where you manage student records (like marks/grades) and calculate results such as total marks, average, and grade based on performance. This is a common beginner project in Java,
+# Student Grading System
+
+## Description
+A Java console application to manage student records and calculate grades.
+
+## Features
+- Add student
+- Calculate total marks
+- Calculate average
+- Display grade
+- Display result
+
+## Technologies
+- Java
+- OOP
+- File Handling
+
+## How to Run
+Compile:
+javac Main.java
+
+Run:
+java Main
+
+## Sample Output
+Enter Student Name: Jayaram
+Enter Marks: 90 85 95
+
+Average: 90
+Grade: A
